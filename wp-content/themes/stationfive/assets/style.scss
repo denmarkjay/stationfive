@@ -1,0 +1,24 @@
+/**
+ * This is the main compiler script of all the scss files.
+ * You may edit these sets of codes whenever you like.
+ *
+ * @Author: Denmark Jay Mago
+ * @AuthorURI: https://github.com/denmarkjay
+ */
+
+// custom variables.
+@import "scss/vars";
+
+// add animations.
+@import "scss/animate";
+
+// import framework resourcess (bootstra)
+@import "../node_modules/bootstrap/scss/bootstrap-reboot.scss";
+@import "../node_modules/bootstrap/scss/bootstrap-grid.scss";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+// custom function and mixins.
+@import "scss/utils";
+
+// display all main layout design.
+@import "scss/layout";

@@ -1,0 +1,326 @@
+/**
+ * This is the main layout of the page.
+ * You may edit these sets of codes whenever you like.
+ *
+ * @Author: Denmark Jay Mago
+ * @AuthorURI: https://github.com/denmarkjay
+ */
+body {
+    font-family: $font-body;
+    background: #ffffff;
+    font-size: rem-calc(16);
+    color: #333333;
+}
+
+p {
+    font-size: inherit;
+    font-weight: 300;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: 
+    all 0.3s;
+}
+
+strong {
+    font-weight: bold;
+}
+
+img {
+    max-width: 100%;
+}
+
+.font-body {
+    font-family: $font-body;
+}
+
+.font-heading {
+    font-family: $font-heading;
+}
+
+/**
+ * Overriding bootstrap style.
+ */
+.input-group-text, input.form-control {
+    @include border-radius(rem-calc(0));
+}   
+
+/**
+ * Add radio button custom layout
+ */
+@import "radio";
+
+/***************************************************
+ *   DONATION FORM DESIGN
+ **************************************************/
+#donation-form {
+    background-image: url("images/swish-bg-opt.png");
+    background-repeat: no-repeat;
+    background-position: 50% 15%;
+    padding-top: rem-calc(40);
+
+    .donation-area {
+        max-width: rem-calc(1000);
+        margin-left: auto;
+        margin-right: auto;
+
+        $main-padding: rem-calc(40 100);
+        $main-padding-mobile: rem-calc(30 40);
+        
+
+        &__title-heading {
+            text-align: center;
+            padding: $main-padding;
+
+            @include breakpoint-down(rem-calc(768)) {
+                padding: $main-padding-mobile;
+            }
+
+            h1 {
+                font-size: rem-calc(50);
+            }
+        }
+
+        &__form-area {
+            background-color: #fff;
+            padding: $main-padding;
+            @include border-radius(rem-calc(16));
+            @include box-shadow((0 0 rem-calc(15) 0 rgba(0,0,0,0.2)));
+
+            @include breakpoint-down(rem-calc(768)) {
+                padding: $main-padding-mobile;
+            }
+
+            p {
+                margin-bottom: rem-calc(0);
+            }
+
+            &__subheading {
+                font-size: rem-calc(24);
+            }
+
+            &__amount {
+                font-size: rem-calc(52);
+                font-weight: 700;
+                line-height: 1;
+                margin-top: rem-calc(10);
+
+                @include breakpoint-down(rem-calc(500)) {
+                    font-size: rem-calc(42);
+                }
+            }
+
+            &__total-figure {
+                font-size: rem-calc(24);
+                font-weight: 400;
+            }
+
+            &__percentage-bar {
+                width: 80%;
+                margin: rem-calc(30) auto rem-calc(30);
+    
+                .bar {
+                    height: rem-calc(20);
+                    width: 100%;
+                    display: block;
+                    position: relative;
+                    background-color: #f1f1f1;
+    
+                    span {
+                        width: 0%;
+                        height: 100%;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                    }
+                }
+            }
+
+        }
+
+        &__form {
+            .form-heading {
+                font-size: rem-calc(22);
+            }
+
+            button {
+                font-size: rem-calc(12);
+                padding: rem-calc(13 34);
+            }
+
+            hr {
+                margin-bottom: rem-calc(20);
+                margin-left: -3%;
+                width: 106%;
+            }
+
+            &__amount {
+                max-width: rem-calc(400);
+                margin: 0 auto;
+
+                .input-group {
+                    width: rem-calc(180);
+                    margin: 0 auto rem-calc(12); 
+                    
+                    input {
+                        margin-left: rem-calc(-1);
+                        border-left: rem-calc(0) !important;
+                    }
+
+                    span {
+                        border-right: rem-calc(0) !important;
+                    }
+                }
+
+                p {
+                    font-size: rem-calc(12);
+                }
+            }
+
+            .form-check {
+                padding-left: 0;
+
+                .check-area {
+                    display: inline-block;
+                    margin-right: rem-calc(50);
+
+                    label {
+                        font-size: rem-calc(17);
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            &__fields {
+                .col-6 {
+                    margin-bottom: rem-calc(14);
+
+                    &.odd {
+                        padding-right: rem-calc(7);
+                    }
+
+                    &.even {
+                        padding-left: rem-calc(7);
+                    }
+                }
+            }
+
+            &__total {
+                .input-group {
+                    max-width: rem-calc(280);
+                    margin: 0 auto;
+                }
+
+                span.form-control {
+                    @include border-radius(rem-calc(0));
+                    margin-left: rem-calc(-1);
+                    border-left-width: rem-calc(0);
+                }
+
+                @include breakpoint-down(rem-calc(500)) {
+                    .input-group-text {
+                        width: 100%;
+                    }
+    
+                    span.form-control {
+                        @include border-radius(rem-calc(0));
+                        margin-left: rem-calc(0);
+                        border-left-width: rem-calc(1);
+                    }    
+                }
+            }
+        }
+    }
+}
+
+/***************************************************
+ *   DONATION DETAILS
+ **************************************************/
+#donation-details {
+    margin-top: rem-calc(80);
+    margin-bottom: rem-calc(70);
+
+    .background-poster {
+        @include border-radius(rem-calc(10));
+
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url("images/bg-child.jpg");
+
+        @include breakpoint-down(rem-calc(768)) {
+            padding-top: 80%;
+        }
+    }
+
+    .container {
+        max-width: rem-calc(1240) !important;
+    }
+
+    .donation-content {
+        padding: rem-calc(180 30);
+
+        @include breakpoint-down(rem-calc(768)) {
+            padding: rem-calc(80 30);
+        }
+
+        .inner {
+            max-width: 75%;
+            margin: 0 auto;
+        }
+
+        .dotted {
+            background-position: center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-image: url("images/dots.svg");
+            width: rem-calc(70);
+            height: rem-calc(70);
+            position: absolute;
+            display: block;
+            z-index: 12;
+            top: rem-calc(-50);
+            left: rem-calc(-55);
+        }
+
+        .arrow {
+            background-position: center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-image: url("images/arrow.svg");
+            display: block;
+            z-index: 12;
+
+            &.left {
+                width: rem-calc(40);
+                height: rem-calc(50);
+                position: absolute;
+                bottom: rem-calc(-50);
+                left: rem-calc(-55);
+            }
+
+            &.right {
+                width: rem-calc(40);
+                height: rem-calc(50);
+                position: absolute;
+                top: rem-calc(-50);
+                right: rem-calc(-55);
+
+                @include transform(rotate(180deg));
+            }
+        }
+
+        h5 {
+            font-size: rem-calc(16);
+            font-weight: 600;
+        }
+
+        p {
+            font-size: rem-calc(12);
+        }
+    }
+}
