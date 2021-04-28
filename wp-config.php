@@ -89,6 +89,8 @@ define( 'NONCE_SALT',       getenv_docker('WORDPRESS_NONCE_SALT',       'da86518
 
 define('ALLOW_UNFILTERED_UPLOADS', TRUE);
 
+define('WP_SITEURL', $_SERVER['WP_SITEURL'] ?? 'http://localhost:8000');
+define('WP_HOME',  $_SERVER['WP_SITEURL'] ?? 'http://localhost:8000');
 /**
  * WordPress Database Table prefix.
  *
