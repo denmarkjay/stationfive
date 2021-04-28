@@ -58,7 +58,7 @@ define( 'DB_PASSWORD', $_SERVER['DB_PASS'] ?? 'secret' );
  */
 
 /** MySQL hostname */
-define( 'DB_HOST', getenv_docker('WORDPRESS_DB_HOST', 'db') );
+define( 'DB_HOST', $_SERVER['DB_HOST'] ?? 'db' );
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', getenv_docker('WORDPRESS_DB_CHARSET', 'utf8') );
