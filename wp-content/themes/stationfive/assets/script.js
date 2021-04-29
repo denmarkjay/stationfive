@@ -32,7 +32,7 @@ $(document).on('ready', function () {
         duration: 1500,
         delay: 40,
         callback: function(data) {
-            var value = parseInt(data.replace(",", ""));
+            var value = parseFloat(data.replace(/,/g, ""));
 
             if (value > 0) {
                 var figureToReach = parseInt($('#donation-total-figure').val());
